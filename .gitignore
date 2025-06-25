@@ -1,0 +1,14 @@
+# Directories
+backup
+build
+
+# Dotfiles
+.pull-request
+.DS_Store
+.godep
+.jsdep
+.jssrc
+.dev-jssrc
+.bindata
+.eslintcache
+nil
