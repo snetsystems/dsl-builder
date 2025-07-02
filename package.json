@@ -1,0 +1,40 @@
+{
+  "name": "dsl-builder",
+  "version": "1.0.0",
+  "description": "OpenSearch Query Builder - Extract from OpenSearch Dashboards",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && mkdir -p dist/opensearch_query/kuery/ast/_generated_ && cp src/opensearch_query/kuery/ast/_generated_/kuery.js dist/opensearch_query/kuery/ast/_generated_/kuery.js",
+    "prepare": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "opensearch",
+    "query",
+    "builder",
+    "elasticsearch"
+  ],
+  "author": "OpenSearch Contributors",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "lodash": "^4.17.21",
+    "lucene": "^2.1.0"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.8",
+    "@types/jest": "^28.1.8",
+    "@types/node": "~20.10.5",
+    "@types/lodash": "^4.14.195",
+    "@types/lucene": "^2.1.0",
+    "typescript": "^4.6.4"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
+}

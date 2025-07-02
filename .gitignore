@@ -1,6 +1,8 @@
 # Directories
 backup
 build
+dist
+node_modules
 
 # Dotfiles
 .pull-request
