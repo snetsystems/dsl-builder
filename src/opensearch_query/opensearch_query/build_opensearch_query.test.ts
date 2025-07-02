@@ -35,7 +35,7 @@ import {decorateQuery} from './decorate_query'
 import {IIndexPattern} from '../../index_patterns'
 import {MatchAllFilter} from '../filters'
 import {fields} from '../../index_patterns/mocks'
-import {Query} from '../../query/types'
+import {Query} from '../../type/query'
 
 describe('build query', () => {
   const indexPattern: IIndexPattern = ({
