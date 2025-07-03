@@ -1,6 +1,6 @@
 {
   "name": "dsl-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OpenSearch Query Builder - Extract from OpenSearch Dashboards",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
     "builder",
     "elasticsearch"
   ],
-  "author": "OpenSearch Contributors",
+  "author": "CloudHub",
   "license": "Apache-2.0",
   "dependencies": {
     "moment": "^2.24.0",
