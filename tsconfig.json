@@ -2,16 +2,19 @@
   "compilerOptions": {
     "target": "es2018",
     "module": "commonjs",
+    "moduleResolution": "node",
     "lib": ["esnext", "dom"],
     "declaration": true,
-    "outDir": "./dist",
+    "declarationMap": false,
+    "outDir": "./dist/cjs",
     "rootDir": "./src",
     "baseUrl": "./",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "sourceMap": false
   },
   "include": [
     "src/**/*"
