@@ -1,6 +1,6 @@
 {
   "name": "dsl-builder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "OpenSearch Query Builder - Extract from OpenSearch Dashboards",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",

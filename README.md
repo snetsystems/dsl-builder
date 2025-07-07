@@ -2,6 +2,10 @@
 
 A library extracted from OpenSearch Dashboard for Query DSL conversion. This package provides core functionality for OpenSearch/Elasticsearch query builder.
 
+**Version Compatibility:** This library is extracted from OpenSearch-Dashboards version 3.1.0 (as of 2025.7.20) and maintains compatibility with that version's query DSL structure and features.
+
+**Module Support:** This package supports both CommonJS and ES Module imports for maximum compatibility.
+
 ## 📦 Installation
 
 ```bash
@@ -23,12 +27,20 @@ yarn add dsl-builder
 - Support for various field types (string, number, date, geo, etc.)
 - Specialized query processing for each field type
 
+### Module Support
+- **CommonJS**: `const { buildOpenSearchQuery } = require('dsl-builder');`
+- **ES Modules**: `import { buildOpenSearchQuery } from 'dsl-builder';`
+
 ## 📖 Usage
 
 ### KQL Query Conversion
 
 ```typescript
+// ES Module import
 import { buildOpenSearchQuery } from 'dsl-builder';
+
+// CommonJS import
+// const { buildOpenSearchQuery } = require('dsl-builder');
 
 const indexPattern = {
   title: 'logs-*',
