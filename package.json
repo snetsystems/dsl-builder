@@ -1,0 +1,81 @@
+{
+  "name": "dsl-builder",
+  "version": "1.0.3",
+  "description": "OpenSearch Query Builder - Extract from OpenSearch Dashboards",
+  "main": "dist/cjs/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:esm && npm run copy-files",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "copy-files": "npm run copy-generated && cp -r dist/esm/* dist/ && rm -rf dist/esm && npm run clean-sourcemaps",
+    "copy-generated": "mkdir -p dist/opensearch_query/kuery/ast/_generated_ && mkdir -p dist/cjs/opensearch_query/kuery/ast/_generated_ && cp src/opensearch_query/kuery/ast/_generated_/kuery.js dist/opensearch_query/kuery/ast/_generated_/kuery.js && cp src/opensearch_query/kuery/ast/_generated_/kuery.js dist/cjs/opensearch_query/kuery/ast/_generated_/kuery.js",
+    "clean-sourcemaps": "find dist -name '*.map' -delete",
+    "prepare": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "opensearch",
+    "query",
+    "builder",
+    "elasticsearch"
+  ],
+  "author": "CloudHub",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "moment-timezone": "^0.5.27",
+    "lucene": "^2.1.0"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.21",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.8",
+    "@types/jest": "^28.1.8",
+    "@types/node": "~20.10.5",
+    "@types/lodash": "^4.14.195",
+    "@types/lucene": "^2.1.0",
+    "typescript": "^4.6.4",
+    "lodash": "^4.17.21",
+    "moment": "^2.24.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./buildOpenSearchQuery": {
+      "import": "./dist/opensearch_query/opensearch_query/build_opensearch_query.js",
+      "require": "./dist/cjs/opensearch_query/opensearch_query/build_opensearch_query.js",
+      "types": "./dist/opensearch_query/opensearch_query/build_opensearch_query.d.ts"
+    },
+    "./opensearch_query": {
+      "import": "./dist/opensearch_query/index.js",
+      "require": "./dist/cjs/opensearch_query/index.js",
+      "types": "./dist/opensearch_query/index.d.ts"
+    },
+    "./index_patterns": {
+      "import": "./dist/index_patterns/index.js",
+      "require": "./dist/cjs/index_patterns/index.js",
+      "types": "./dist/index_patterns/index.d.ts"
+    },
+    "./query": {
+      "import": "./dist/query/index.js",
+      "require": "./dist/cjs/query/index.js",
+      "types": "./dist/query/index.d.ts"
+    }
+  }
+}
